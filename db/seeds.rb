@@ -6,4 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
+t = User.create(:first_name=>"John", :last_name=>"Smith", :password=>"password")
+ch = Child.create(:first_name=>"Ashley", :last_name=>"Muller", age=>"26")
+cl = Klass.create(:room_number=>"102")
