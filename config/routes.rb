@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  resources :events, only: [:create, :update, :destroy, :index, :show]
+  resources :children, only: [:create, :update, :destroy, :index, :show]
+  resources :klasses, only: [:create, :update, :destroy, :index, :show]
+  resources :users, only: [:show, :edit]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

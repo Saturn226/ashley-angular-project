@@ -17,3 +17,7 @@
 /tmp
 
 /ideas.md
+
+#Ignore bower components
+
+/vender/assets/bower_components

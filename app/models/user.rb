@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_one :klass
+  has_many :children, through: :klass
 
 
   def login=(login)
@@ -14,7 +15,7 @@ class User < ActiveRecord::Base
     @login || self.username || self.email
   end
 
-  def name
-    self.first_name + " " + self.last_name
-  end
+  # def name
+  #   self.first_name + " " + self.last_name
+  # end
 end

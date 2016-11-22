@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+gem 'bower-rails'
+gem 'angular-rails-templates'
 gem 'responders'
 gem 'active_model_serializers'
 gem 'devise'
