@@ -1,5 +1,7 @@
-<!--<ul>
-  <li ng-repeat="child in vm.children">{{child.name}}</li>
-</ul> -->
+<ul>
+  <li ng-repeat="child in vm.children track by child.id">{{child.name}}</li>
+</ul> 
 
 {{vm.name}}
+
+<ui-view></ui-view>

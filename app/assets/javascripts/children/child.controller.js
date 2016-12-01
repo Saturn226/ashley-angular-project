@@ -1,10 +1,12 @@
 (function(){
   'use strict'
 
+
+
   function ChildController(ChildFactory){
     var vm = this;
 
-    vm.name = "Child Controller"
+    vm.name = "Ashley"
     vm.getChildren = getChildren;
     vm.createChild = createChild;
     vm.deleteChild = deleteChild;

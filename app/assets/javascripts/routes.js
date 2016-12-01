@@ -16,6 +16,27 @@
         templateUrl: "children/child.html",
         controller: 'ChildController as vm'
       })
+
+      .state('home.login', {
+      url: 'login',
+      templateUrl: 'auth/_login.html',
+      controller: 'AuthController',
+      onEnter: ['$state', 'Auth', function($state, Auth) {
+        Auth.currentUser().then(function (){
+          $state.go('home');
+        })
+      }]
+    })
+    .state('home.register', {
+      url: 'register',
+      templateUrl: 'auth/_register.html',
+      controller: 'AuthController',
+      onEnter: ['$state', 'Auth', function($state, Auth) {
+        Auth.currentUser().then(function (){
+          $state.go('home');
+        })
+      }]
+    });
       $urlRouterProvider.otherwise("/")
     })
 }());
