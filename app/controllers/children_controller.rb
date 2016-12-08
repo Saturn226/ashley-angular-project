@@ -31,6 +31,12 @@ class ChildrenController < ApplicationController
     end
   end
 
+  def events
+    child = Child.find_by_id(params[:id])
+    events = Event.where(child_id: child)
+    render json: events
+  end
+
   def destroy
     child = Child.find_by_id(params[:id])
     if child.user == current_user

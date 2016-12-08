@@ -17,8 +17,10 @@
 
     }
 
-     function getChild(){
-
+     function getChild(id){
+      return $http.get('children/' + id, function(res){
+        return res.data;
+      })
     }
 
      function createChild(){
@@ -35,7 +37,7 @@
 
 
     function handleResponse(response){
-      console.log(response)
+      //console.log(response)
       return response.data
     }
 

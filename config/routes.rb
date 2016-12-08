@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'application#index'
 
+  get 'children/:id/events' => 'children#events'
+
   devise_for :users
 
   resources :events, only: [:create, :update, :destroy, :index, :show]

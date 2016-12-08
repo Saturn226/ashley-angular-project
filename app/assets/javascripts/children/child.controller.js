@@ -5,7 +5,6 @@
 
   function ChildController(ChildFactory){
     var vm = this;
-
     vm.name = "Ashley"
     vm.getChildren = getChildren;
     vm.createChild = createChild;

@@ -1,7 +1,9 @@
+<div ng-show="!!user"><h3>Room {{user.klass.room_number}} Students:</h3>
+
 <ul>
   <li ng-repeat="child in vm.children track by child.id">{{child.name}}</li>
-</ul> 
+</ul></div>
 
-{{vm.name}}
-
+<div ng-controller="UserController as vm"> User Controller Class Number: {{vm.klass}}
+</div>
 <ui-view></ui-view>

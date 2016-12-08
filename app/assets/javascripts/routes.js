@@ -9,12 +9,19 @@
       .state('home',{ 
         url: '/',
         templateUrl: "home/home.html",
-        controller: 'HomeController as vm'
+        controller: 'HomeController as vm'        
       })
       .state('home.children',{
         url:'children',
         templateUrl: "children/child.html",
         controller: 'ChildController as vm'
+      })
+
+      .state('home.child',{
+        url:'children/:id',
+        templateUrl: "children/show.html",
+        controller: 'ChildController as vm',
+        
       })
 
       .state('home.login', {

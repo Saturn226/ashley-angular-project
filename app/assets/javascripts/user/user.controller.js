@@ -1,47 +1,34 @@
 
-  (function UserController(UserFactory){
-    var vm = this;
+  (function(){
+    'use strict'
 
-    vm.name = "Ashley User"
-    vm.getUsers = getUsers;
-    vm.createUser = createUser;
-    vm.deleteUser = deleteUser;
-    vm.updateUser = updateUser;
 
-    activate();
+    function UserController($rootScope, $log){
+            //$rootScope.user = Auth.currentUser();
 
-    function activate(){
-      getUsers();
+    var vm = this
+    vm.user = $rootScope.user;
+    vm.klass = getKlass(vm.user)
+
+    $log.log($rootScope)
+
+    
+
+    function getKlass(user){
+        return user.klass.room_number;
     }
 
 
-    function getUsers(){
-   
-    }
-
-    function getUser(){
-      return UserFactory.getUser
-    }
-
-     function createUser(){
 
     }
 
 
-     function updateUser(){
 
-    }
-
-    function deleteUser(){
-
-    }
-
-    function setUser(data){
-      return vm.users = data
-
-    }
     angular
     .module("app")
-    .controller('UserController', UserController)
+    .controller('UserController', UserController) 
+
+
+
 
   }());

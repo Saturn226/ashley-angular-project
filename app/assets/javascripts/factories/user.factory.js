@@ -17,10 +17,8 @@
 
     }
 
-     function getUser(user){
-      return $http.get('/users/' + user.id)
-        .then(handleResponse)
-        .catch(handleError)
+     function getUser(user, Auth){
+      
     }
 
      function createUser(){
