@@ -3,29 +3,22 @@
     'use strict'
 
 
-    function UserController($rootScope, $log){
-            //$rootScope.user = Auth.currentUser();
+        function UserController($rootScope, $log){
+        var vm = this
+        vm.user = $rootScope.user;
+        vm.klass = getKlass(vm.user)
 
-    var vm = this
-    vm.user = $rootScope.user;
-    vm.klass = getKlass(vm.user)
+        }
 
-    $log.log($rootScope)
+          function getKlass(user){
+            return user.klass.room_number;
+        }
 
-    
-
-    function getKlass(user){
-        return user.klass.room_number;
-    }
-
-
-
-    }
 
 
 
     angular
-    .module("app")
+    .module('app')
     .controller('UserController', UserController) 
 
 

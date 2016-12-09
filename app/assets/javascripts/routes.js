@@ -20,8 +20,14 @@
       .state('home.child',{
         url:'children/:id',
         templateUrl: "children/show.html",
-        controller: 'ChildController as vm',
+        controller: 'ChildController as vm'
         
+      })
+
+      .state('home.child.events',{
+        url: '/events',
+        templateUrl: "event/events.html",
+        controller: 'EventController as vm'
       })
 
       .state('home.login', {

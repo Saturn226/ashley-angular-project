@@ -17,10 +17,10 @@
 
     }
 
-     function getChild(id){
-      return $http.get('children/' + id, function(res){
-        return res.data;
-      })
+     function getChild(params){
+      return $http.get('/children/' + params.id)
+          .then(handleResponse)
+          .catch(handleError)
     }
 
      function createChild(){

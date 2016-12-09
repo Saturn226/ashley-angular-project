@@ -3,18 +3,24 @@
 
 
 
-  function ChildController(ChildFactory){
+  function ChildController(ChildFactory, $stateParams,$log,$scope){
     var vm = this;
-    vm.name = "Ashley"
+    vm.name = this.name;
+  
     vm.getChildren = getChildren;
     vm.createChild = createChild;
     vm.deleteChild = deleteChild;
     vm.updateChild = updateChild;
+    vm.getChild = getChild;
+    vm.setChild = setChild;
 
     activate();
 
     function activate(){
-      getChildren();
+      if ($stateParams.id)
+       getChild($stateParams)
+      else
+       getChildren();
     }
 
 
@@ -24,7 +30,8 @@
     }
 
     function getChild(){
-      return ChildFactory.getChild
+      return ChildFactory.getChild($stateParams)
+        .then(setChild)
     }
 
      function createChild(){
@@ -41,8 +48,12 @@
     }
 
     function setChildren(data){
-      return vm.children = data
+      return vm.children = data 
 
+    }
+
+    function setChild(data){
+      return vm.child = data
     }
 
   }
