@@ -10,4 +10,14 @@
   </span>
 
   <span><button class="btn">Log New Activity</button></span>
+<!-- 
+  <form ng-controller="EventController as vm">
+    <input placeholder="name" ng-model="vm.newEvent.activity.name">
+    <button ng-click="vm.addEvent()" class="btn">Add Event</button>  
+  </form> -->
+
+  <form ng-controller="EventController as vm" ng-submit="vm.addEvent(vm.newEvent)">
+    <input placeholder="name" ng-model="vm.newEvent.activity.name">
+    <input type="submit" class="btn" value="Add Event"> 
+  </form>
 <ui-view></ui-view>

@@ -7,7 +7,8 @@
       getChild: getChild,
       createChild: createChild,
       updateChild: updateChild,
-      deleteChild: deleteChild
+      deleteChild: deleteChild,
+      //getEvents: getEvents
     }
 
     function getChildren(){
@@ -23,7 +24,12 @@
           .catch(handleError)
     }
 
-     function createChild(){
+    function getEvents(){
+
+    }
+
+
+    function createChild(){
 
     }
 
@@ -37,7 +43,6 @@
 
 
     function handleResponse(response){
-      //console.log(response)
       return response.data
     }
 

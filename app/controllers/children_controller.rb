@@ -23,7 +23,7 @@ class ChildrenController < ApplicationController
   def update
     child = Child.find_by_id(params[:id])
     if child.update(child_params)
-      render json: {statu: 'ok'}
+      render json: {status: 'ok'}
     else
       render json:
         {errors: child.error.full_messages},
@@ -40,6 +40,7 @@ class ChildrenController < ApplicationController
   def destroy
     child = Child.find_by_id(params[:id])
     if child.user == current_user
+      #child.delete
     end
   end
 
