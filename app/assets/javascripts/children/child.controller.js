@@ -5,7 +5,7 @@
 
   function ChildController(ChildFactory, $stateParams,$log,$scope){
     var vm = this;
-    vm.name = this.name;
+    //vm.name = this.name;
   
     vm.getChildren = getChildren;
     vm.createChild = createChild;

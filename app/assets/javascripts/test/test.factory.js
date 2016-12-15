@@ -1,7 +1,7 @@
 (function(){
   'use strict'
 
-  function UserFactory($http){
+  function TestFactory($http, Auth){
     return{
       getUsers: getUsers,
       getUser: getUser,
@@ -17,7 +17,10 @@
 
     }
 
-     function getUser(user, Auth){
+    function getUser(){
+      Auth.currentUser().then(function(user){
+        return user;
+    });
       
     }
 
@@ -46,7 +49,7 @@
 
   angular
     .module('app')
-    .factory('UserFactory', UserFactory);
+    .factory('TestFactory', TestFactory);
 
 
 

@@ -10,14 +10,15 @@ class EventsController < ApplicationController
     event = event.new
     render json: event
   end
-    
-  end
 
   def create
      #event = current_user.events.build(event_params)
-     #child = child.find_by_id(params[:child_id])
-     event = event.build(event_params)
+     child = Child.find_by_id(params[:child_id])
+     event = child.events.build(event_params)
+     event.activity.id = event_params[:activity_id]
+
         if event.save
+          puts params.inspect
           render json: event
         else
           render json: { errors: event.errors.full_messages }, status: :unprocessable_entity
@@ -34,7 +35,11 @@ class EventsController < ApplicationController
     private
 
     def event_params
-        params.require(:event).permit(:mood, :comment, :event_time, :activity => [:name], :child_id)
+        params.require(:event).permit(:mood, :comment, :event_time, :child_id, :activity, :activity_id, :activities_attributes => [:name,:id])
     end
+
+    # def activity_params
+    #   params.require(:activity).permit(:name)
+    # end
 
 end

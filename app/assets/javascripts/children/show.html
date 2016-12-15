@@ -17,7 +17,8 @@
   </form> -->
 
   <form ng-controller="EventController as vm" ng-submit="vm.addEvent(vm.newEvent)">
-    <input placeholder="name" ng-model="vm.newEvent.activity.name">
+    <input type="number" placeholder="name" ng-model="vm.newEvent.activity_id">
+    <input type="text" placeholder="comment" ng-model="vm.newEvent.comment">
     <input type="submit" class="btn" value="Add Event"> 
   </form>
 <ui-view></ui-view>

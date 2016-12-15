@@ -26,7 +26,8 @@
     }
 
     function setChild(data){
-      return vm.child = data
+      return $scope.child = data
+
     }
 
 
@@ -39,17 +40,28 @@
         },
         data:{ event: newEvent }
       }
-      return $http(req).catch(handleError)
+
+      $log.log($stateParams)
+      return $http(req)
+        .then(addEventToVM)
+        .catch(handleError)
     }
 
 
       function handleResponse(response) {
-            return response.data
-        }
+          return response.data
+      }
 
-        function handleError(error) {
-            console.log(error);
-        }
+      function handleError(error) {
+          console.log(error);
+      }
+
+      function addEventToVM(response) {
+        
+        $scope.$apply(function() {
+          $scope.child.events.push(response.data)
+        })
+      }
 
 
   }

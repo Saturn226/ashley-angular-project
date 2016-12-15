@@ -3,17 +3,32 @@
     'use strict'
 
 
-        function UserController($rootScope, $log){
+        function UserController($rootScope, $log, UserFactory){
         var vm = this
-        vm.user = $rootScope.user;
-        vm.klass = getKlass(vm.user)
+        activate();
+        vm.klass = getKlass()
+        
 
+
+        function activate(){
+          setCurrentUser(getCurrentUser())
         }
 
-          function getKlass(user){
-            return user.klass.room_number;
+        function getKlass(){
+            return vm.user.klass.room_number;
         }
 
+        function getCurrentUser(){
+          return UserFactory.getCurrentUser()
+        }
+
+        function setCurrentUser(data){
+          vm.user = data;
+        }
+
+
+
+        }
 
 
 
