@@ -7,12 +7,12 @@
     }
 
     function getEvents(params){
-      $http.get(params)
+      return $http.get(params)
         .then(handleResponse)
         .catch(handleError)
     }
 
-    function handleRespone(response){
+    function handleResponse(response){
       return response.data
     }
 
