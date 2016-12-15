@@ -1,7 +1,0 @@
-<div ng-show="!!user"><h3>Room {{user.klass.room_number}} Students:</h3>
-
-<ol>
-  <li ng-repeat="child in vm.children track by child.id" ui-sref="home.child({id: child.id})">{{child.name}}</li>
-</ol></div>
-
-<ui-view></ui-view>
