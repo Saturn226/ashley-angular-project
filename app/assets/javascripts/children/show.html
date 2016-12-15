@@ -1,0 +1,13 @@
+  <h3>{{vm.name}}</h3>
+    <h4>Age:{{vm.age}}</h4>
+    <span ng-if="vm.child.notes"><h4>Notes:</h4>{{vm.child.notes}}</span>
+
+  
+
+
+  <span ui-sref="home.child.events({id: vm.child.id})">
+    <button class="btn">Activity Log</button> 
+  </span>
+
+  <span><button class="btn">Log New Activity</button></span>
+<ui-view></ui-view>

@@ -1,7 +1,7 @@
 <div ng-include=" 'home/navbar.html' "></div>
-<div class="sidebar-left">
-  <h1>Welcome, {{ user.username}}</h1>
-  <h3>Room: {{user.klass.room_number}}</h3>
+<div class="sidebar-left" ng-controller="UserController as vm">
+  <h1>Welcome, {{ vm.username}}</h1>
+  <h3>Room: {{vm.roomNumber}}</h3>
   <tabs class="list-group">
     <pane class="list-group-item" ui-sref="home"><span>Home</span></pane>
     <pane class="list-group-item">Edit User</pane>
@@ -14,11 +14,10 @@
 
 
 
-<div class="main-content" ng-if="user">
+<div class="main-content">
  
   <ui-view>
     <h3>Welcome to the Home Page!!</h3>
-
   </ui-view>
 
 </div>
