@@ -17,5 +17,6 @@
 //= require angular-rails-templates
 //= require moment
 //= require bootstrap-sprockets
+//= require app
 
 //= require_tree .

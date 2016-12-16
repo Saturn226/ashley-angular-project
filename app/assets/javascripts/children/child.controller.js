@@ -2,7 +2,7 @@
 
   function ChildController(ChildFactory,$stateParams){
 
-    vm = this;
+    var vm = this;
     activate();
 
     function activate(){

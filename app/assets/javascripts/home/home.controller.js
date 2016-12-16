@@ -10,7 +10,6 @@
 
   function HomeController($rootScope, $state,$log){
     var vm = this;
-    //$log.log($rootScope);
     vm.name = "Home Controller"
    
   }

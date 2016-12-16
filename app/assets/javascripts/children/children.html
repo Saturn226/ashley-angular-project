@@ -1,7 +1,7 @@
 <div>
 
   <h3 ng-controller="UserController as vm">Room {{vm.roomNumber}} Students:</h3>
-  <ol ng-controller="ChildController as vm">
+  <ol>
     <li ng-repeat="child in vm.children track by child.id" ui-sref="home.child({id: child.id})">  {{child.name}}
     </li>
   </ol>

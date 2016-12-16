@@ -1,7 +1,7 @@
 (function(){
   function EventController(EventFactory,$http, $stateParams){
     'use strict'
-    vm = this
+    var vm = this
 
     activate();
 
