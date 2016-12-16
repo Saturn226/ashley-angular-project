@@ -1,5 +1,5 @@
 (function(){
-  function EventController(EventFactory,$http, $stateParams){
+  function EventController(EventFactory,$http, $stateParams, ActivityFactory){
     'use strict'
     var vm = this
 
@@ -10,6 +10,7 @@
         getEvents('/children/' + $stateParams.id + '/events')
       else
         getEvents('/events')
+      getActivities()
     }
 
     function getEvents(params){
@@ -23,6 +24,15 @@
 
     function addEvent(event){
       return EventFactory.addEvent()
+    }
+
+    function getActivities(){
+      return ActivityFactory.getActivities()
+        .then(setActivities)
+    }
+
+    function setActivities(data){
+      vm.activities = data
     }
   }
 

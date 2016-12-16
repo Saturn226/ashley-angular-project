@@ -21,23 +21,23 @@
       console.log(error)
     }
 
-    // function addEvent(event){
-    //   $http.post('/children/' + $stateParams.id + '/events')
-    //     .then(handleResponse)
-    //     .catch(handleError)
-    // }
-
-      function addEvent(newEvent){
-      var req = {
-        method: 'POST',
-        url: 'children/' + $stateParams.id +'/events',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        data:{ event: newEvent }
-      }
-      return $http(req).catch(handleError)
+    function addEvent(params){
+      $http.post('/children/' + $stateParams.id + '/events', data)
+        .then(console.log(data))
+        .catch(handleError)
     }
+
+    //   function addEvent(newEvent){
+    //   var req = {
+    //     method: 'POST',
+    //     url: 'children/' + $stateParams.id +'/events',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     data:{ event: newEvent }
+    //   }
+    //   return $http(req).catch(handleError)
+    // }
 
 
     function handleError(error){
