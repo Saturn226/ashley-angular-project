@@ -8,7 +8,7 @@
   // how would i create a current_user object?
 
 
-  function HomeController(Auth, $rootScope, $state,$log){
+  function HomeController($rootScope, $state,$log){
     var vm = this;
     //$log.log($rootScope);
     vm.name = "Home Controller"
