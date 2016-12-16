@@ -1,6 +1,6 @@
 (function(){
-  function ActivityFactory(){
-    
+  function ActivityFactory($http){
+ 
   }
 
   angular

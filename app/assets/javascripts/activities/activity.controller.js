@@ -1,7 +1,6 @@
 (function(){
-
-
   function ActivityController(){
+    vm = this
   }
 
   angular

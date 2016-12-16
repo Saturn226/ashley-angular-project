@@ -21,8 +21,8 @@
       vm.events = data
     }
 
-    function addEvent(){
-
+    function addEvent(event){
+      return EventFactory.addEvent()
     }
   }
 
