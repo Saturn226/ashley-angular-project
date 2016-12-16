@@ -1,7 +1,7 @@
 (function(){
 
   function UserController(UserFactory){
-    vm = this
+    var vm = this
     
     activate();
 

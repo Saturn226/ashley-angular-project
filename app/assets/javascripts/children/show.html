@@ -10,11 +10,26 @@
   </span>
 
   <span><button class="btn">Log New Activity</button></span>
+  <p></p>
+
 
 <form ng-controller="EventController as vm" ng-submit="vm.addEvent(vm.newEvent)">
+  <div ng-controller="ActivityController as vm" >
+    
+    <!-- <input type="number" placeholder="name" ng-model="vm.activity_id"> -->
+    <input type="text" placeholder="comment" ng-model="vm.comment">
+    
+    <select ng-model="activity" ng-options="activity.name for activity in vm.activities">
+
+     <input type="submit" class="btn" value="Add Event">
+    </select>
+  </div>
+</form>
+
+<!-- <form ng-controller="EventController as vm" ng-submit="vm.addEvent(vm.newEvent)">
     <input type="number" placeholder="name" ng-model="vm.activity_id">
     <input type="text" placeholder="comment" ng-model="vm.comment">
     <input type="submit" class="btn" value="Add Event"> 
-</form>
+</form> -->
 
 <ui-view></ui-view>
