@@ -11,6 +11,14 @@
         templateUrl: "home/home.html",
         controller: 'HomeController as vm'        
       })
+
+
+      .state('home.activities',{
+        url: 'activities',
+        templateUrl: "activity/activities.html",
+        controller: 'ActivityController as vm'
+      })
+
       .state('home.children',{
         url:'children',
         templateUrl: "children/children.html",
@@ -25,6 +33,12 @@
 
       .state('home.child.events',{
         url: '/events',
+        templateUrl: "event/events.html",
+        controller: 'EventController as vm'
+      })
+
+       .state('home.events',{
+        url: 'events',
         templateUrl: "event/events.html",
         controller: 'EventController as vm'
       })

@@ -2,6 +2,7 @@
 
 <div ng-repeat="event in vm.events track by event.id" >
 <pane class="list-group-item">
+  <p>Child: {{event.child.name}}
   <p>Activity: {{event.activity.name}}</p>
   <p>Time: {{event.event_time}}</p>
   <p>Mood: {{event.mood}}</p>

@@ -9,6 +9,15 @@ class ApplicationController < ActionController::Base
 
   def index
   end
+
+   
+  def activities
+    activities = Activity.all
+    render json: activities
+  end
+
+
+  
   protected
 
   # def configure_permitted_parameters
@@ -18,7 +27,7 @@ class ApplicationController < ActionController::Base
   #   devise_parameter_sanitizer.for(:sign_up) << :username
   # end
 
-   def angular
+  def angular
     render 'layouts/application'
   end
 
@@ -30,6 +39,5 @@ class ApplicationController < ActionController::Base
   def verified_request?
     super || valid_authenticity_token?(session, request.headers['X-XSRF-TOKEN'])
   end
-
 
 end

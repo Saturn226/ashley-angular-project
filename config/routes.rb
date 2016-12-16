@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'application#index'
 
   get 'children/:id/events' => 'children#events'
+  get '/activities' => 'application#activities'
 
   devise_for :users
 
