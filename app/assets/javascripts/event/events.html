@@ -6,7 +6,7 @@
   <p>Activity: {{event.activity.name}}</p>
   <p>Time: {{event.event_time}}</p>
   <p>Mood: {{event.mood}}</p>
-  <p>Comments: {{event.comment}}</p>
+  <p ng-if="event.comment">Comments: {{event.comment}}</p>
 </pane>
  
 </div>

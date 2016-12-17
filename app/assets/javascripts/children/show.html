@@ -15,14 +15,12 @@
 <!-- Form for new event -->
 
 <form ng-controller="EventController as vm" ng-submit="vm.addEvent(vm.newEvent)">
-   <input type="text" placeholder="comment" ng-model="vm.comment">
+   <input type="text" placeholder="comment" ng-model="vm.newEvent.comment">
 
-    <select ng-model="vm.activity" ng-options="activity.name for activity in vm.activities">
+    <select ng-model="vm.newEvent.activity_id" ng-options="activity.id as activity.name for activity in vm.activities">
     </select>
 
   <input type="submit" class="btn" value="Add Event">
-
-  </div>
 </form>
 
 <!-- <form ng-controller="EventController as vm" ng-submit="vm.addEvent(vm.newEvent)">
