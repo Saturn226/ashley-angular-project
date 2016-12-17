@@ -20,23 +20,23 @@
       console.log(error)
     }
 
-    // function addEvent(params){
-    //   $http.post('/children/' + $stateParams.id + '/events', data)
-    //     .then(console.log(data))
+    function addEvent(newEvent){
+      return $http.post('/children/' + $stateParams.id + '/events', {event: newEvent})
+        .catch(handleError)
+    }
+
+    //   function addEvent(newEvent){
+    //   var req = {
+    //     method: 'POST',
+    //     url: 'children/' + $stateParams.id +'/events',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     data:{ event: newEvent }
+    //   }
+    //   return $http(req)
     //     .catch(handleError)
     // }
-
-      function addEvent(newEvent){
-      var req = {
-        method: 'POST',
-        url: 'children/' + $stateParams.id +'/events',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        data:{ event: newEvent }
-      }
-      return $http(req).catch(handleError)
-    }
   }
 
   angular

@@ -1,5 +1,5 @@
 (function(){
-  function EventController(EventFactory,$http, $stateParams, ActivityFactory, $state, $scope){
+  function EventController(EventFactory,$http, $stateParams, ActivityFactory, $state, $scope, $location){
     'use strict'
     var vm = this
     vm.newEvent = {}
@@ -25,9 +25,11 @@
     }
 
     function addEvent(event){
+       // vm.events.push(event)
+        //console.log(vm.events)
         return EventFactory.addEvent(event)
-      }
-        //.then($state.go('home.child.events'))
+          .then($state.reload())
+
     }
 
     function getActivities(){
