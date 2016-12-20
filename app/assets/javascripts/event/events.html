@@ -1,8 +1,10 @@
 <h3>Activities</h3>
 
-<div ng-repeat="event in vm.events" >
+
+
+<div ng-repeat="event in vm.events track by event.id">
 <pane class="list-group-item">
-  <p>Child: {{event.child.name}}
+  <p>Child: {{event.child.name}}</p>
   <p>Activity: {{event.activity.name}}</p>
   <p>Time: {{event.event_time}}</p>
   <p>Mood: {{event.mood}}</p>
