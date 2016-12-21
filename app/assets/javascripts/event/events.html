@@ -19,9 +19,18 @@
 
 
 
-<div ng-repeat="event in vm.events track by event.id">
+<!-- <div ng-repeat="event in vm.events | orderBy: '-id' | filter: ActivityNameFilter"> -->
+
+<!-- filter -->
+ <span>Filter: <select name="activity" ng-model="activity_id" ng-options="activity.id as activity.name for activity in vm.activities"> 
+  <option value="">All</option>
+ </select></span>
+
+<div ng-repeat="event in vm.events | ActivityNameFilter: activity_id">
 <pane class="list-group-item">
-  <span class="close" ng-click="vm.deleteEvent(event)">X</span>
+
+
+  <span class="close" ng-click="vm.deleteEvent(event)" ng-if="vm.childExists">×</span>
   <p>Child: {{event.child.name}}</p>
   <p>Activity: {{event.activity.name}}</p>
   <p>Time: {{event.event_time}}</p>
