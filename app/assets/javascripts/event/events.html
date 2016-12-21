@@ -17,6 +17,11 @@
 </form>
 </div>
 
+<div class="input-group input-group-md">
+          <span class="input-group-addon" id="sizing-addon1"><strong>Search</strong></span>
+          <input ng-model="query" ng-change="searchFilter" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="">
+</div>
+
 
 
 <!-- <div ng-repeat="event in vm.events | orderBy: '-id' | filter: ActivityNameFilter"> -->
@@ -26,7 +31,7 @@
   <option value="">All</option>
  </select></span>
 
-<div ng-repeat="event in vm.events | ActivityNameFilter: activity_id">
+<div ng-repeat="event in vm.events | ActivityNameFilter: activity_id | filter: query">
 <pane class="list-group-item">
 
 
