@@ -1,9 +1,10 @@
 (function(){
-  function EventFactory($stateParams, $http){
+  function EventFactory($stateParams, $http, $state){
 
     return {
       getEvents: getEvents,
-      addEvent: addEvent
+      addEvent: addEvent,
+      deleteEvent: deleteEvent
     }
 
     function getEvents(params){
@@ -25,18 +26,11 @@
         .catch(handleError)
     }
 
-    //   function addEvent(newEvent){
-    //   var req = {
-    //     method: 'POST',
-    //     url: 'children/' + $stateParams.id +'/events',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     data:{ event: newEvent }
-    //   }
-    //   return $http(req)
-    //     .catch(handleError)
-    // }
+    function deleteEvent(event){
+      return $http.delete('/children/'+ event.child.id +'/events/' + event.id)
+        .catch(handleError)
+    }
+
   }
 
   angular

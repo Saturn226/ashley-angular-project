@@ -5,6 +5,7 @@
     var vm = this
     vm.newEvent = {}
     vm.addEvent = addEvent
+    vm.deleteEvent = deleteEvent
     vm.childExists = false
 
     activate();
@@ -33,6 +34,11 @@
           .then(function(response){
             vm.events.push(response.data)
           }) 
+    }
+
+    function deleteEvent(event){
+      return EventFactory.deleteEvent(event)
+        .then(vm.events.splice(vm.events.indexOf(event),1))
     }
 
     function getActivities(){

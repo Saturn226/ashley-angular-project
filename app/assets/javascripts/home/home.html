@@ -1,19 +1,21 @@
 <div ng-include=" 'home/navbar.html' "></div>
+
+<!-- Left Bar -->
 <div class="sidebar-left" ng-controller="UserController as vm">
   <h1>Welcome, {{ vm.username}}</h1>
   <h3>Room: {{vm.roomNumber}}</h3>
   <tabs class="list-group">
-    <pane class="list-group-item" ui-sref="home"><span>Home</span></pane>
+    <div class="list-group-item" ui-sref="home"><span>Home</span></div>
    <!--  <pane class="list-group-item">Edit User</pane> -->
-    <pane class="list-group-item" ui-sref="home.children"> <span> All Children</span> </pane>
+    <div class="list-group-item" ui-sref="home.children"> <span> All Children</span> </div>
     <!-- <pane class="list-group-item">Add Child</pane> -->
-    <pane class="list-group-item" ui-sref="home.events">Activity Log</pane>
+    <div class="list-group-item" ui-sref="home.events">Activity Log</div>
 
   </tabs>
 </div>
 
 
-
+<!-- Main Content -->
 <div class="main-content">
  
   <ui-view>

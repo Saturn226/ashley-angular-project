@@ -11,6 +11,15 @@ class EventsController < ApplicationController
     render json: event
   end
 
+  def show
+    event = Event.find_by_id(params[:id])
+    render json: event
+  end
+
+  def destroy
+    respond_with Event.destroy(params[:id])
+  end
+
   def create
      child = Child.find_by_id(params[:child_id])
      event = child.events.build(event_params)

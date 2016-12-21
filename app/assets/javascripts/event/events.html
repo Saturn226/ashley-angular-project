@@ -1,11 +1,17 @@
 <h3>Activities</h3>
 
+<!-- New Activity Form -->
+<form name="newEvent" ng-submit="vm.addEvent(vm.newEvent)" ng-if="vm.childExists">
+   <input name="comment" type="text" placeholder="comment" ng-model="vm.newEvent.comment" required>
 
-<form ng-submit="vm.addEvent(vm.newEvent)" ng-if="vm.childExists">
-   <input type="text" placeholder="comment" ng-model="vm.newEvent.comment">
-
-    <select ng-model="vm.newEvent.activity_id" ng-options="activity.id as activity.name for activity in vm.activities">
+    <select name="activity" ng-model="vm.newEvent.activity_id" ng-options="activity.id as activity.name for activity in vm.activities" required>
     </select>
+
+    
+ <!--    <span ng-show="newEvent.comment.$dirty && newEvent.comment.$invalid">The Comment is required.</span>
+</p>
+ -->
+
 
   <input type="submit" class="btn" value="Add">
 </form>
@@ -15,6 +21,7 @@
 
 <div ng-repeat="event in vm.events track by event.id">
 <pane class="list-group-item">
+  <span class="close" ng-click="vm.deleteEvent(event)">X</span>
   <p>Child: {{event.child.name}}</p>
   <p>Activity: {{event.activity.name}}</p>
   <p>Time: {{event.event_time}}</p>

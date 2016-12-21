@@ -5,13 +5,16 @@ Rails.application.routes.draw do
   get '/activities' => 'application#activities'
 
   devise_for :users
-
+ #scope format: true,  defaults:{format: :json} do
   resources :events, only: [:index, :show, :create]
+
   resources :children, only: [:index, :show, :destroy, :update, :destroy] do 
-    resources :events, only: [:create, :update, :destroy, :show]
+    resources :events, only: [:create, :update, :destroy, :show], defaults: { format: 'json' }
   end
   resources :klasses, only: [:create, :update, :destroy, :index, :show]
   resources :users, only: [:show, :edit]
+
+#end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

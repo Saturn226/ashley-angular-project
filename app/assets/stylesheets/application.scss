@@ -36,6 +36,17 @@ div.main-content{
   padding: 30px;
 }
 
+input.ng-invalid {
+    background-color: pink;
+}
+
+.close {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:#ccc;
+}
+
 .navbar{
   margin-bottom: 0px;
 }
