@@ -1,15 +1,19 @@
 (function(){
+   'use strict'
   function EventController(EventFactory, $stateParams, ActivityFactory, $state){
-    'use strict'
+   
     var vm = this
     vm.newEvent = {}
     vm.addEvent = addEvent
+    vm.childExists = false
 
     activate();
 
     function activate(){
-      if($stateParams.id)
+      if($stateParams.id){
+        vm.childExists = true;
         getEvents('/children/' + $stateParams.id + '/events')
+      }
       else
         getEvents('/events')
       getActivities()
@@ -28,7 +32,6 @@
         return EventFactory.addEvent(event)
           .then(function(response){
             vm.events.push(response.data)
-            console.log(vm.events)
           }) 
     }
 

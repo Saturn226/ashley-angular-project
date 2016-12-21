@@ -1,6 +1,17 @@
 <h3>Activities</h3>
 
 
+<form ng-submit="vm.addEvent(vm.newEvent)" ng-if="vm.childExists">
+   <input type="text" placeholder="comment" ng-model="vm.newEvent.comment">
+
+    <select ng-model="vm.newEvent.activity_id" ng-options="activity.id as activity.name for activity in vm.activities">
+    </select>
+
+  <input type="submit" class="btn" value="Add">
+</form>
+</div>
+
+
 
 <div ng-repeat="event in vm.events track by event.id">
 <pane class="list-group-item">
