@@ -10,7 +10,8 @@ class ChildrenController < ApplicationController
   end
 
   def create
-    child = current_user.klass.children.build(child_params)
+    #child = current_user.klass.children.build(child_params)
+    child = Child.new(child_params)
     if child.save
       render json: {status: "ok"}
     else

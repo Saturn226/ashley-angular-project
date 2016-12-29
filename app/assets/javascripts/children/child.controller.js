@@ -3,6 +3,8 @@
   function ChildController(ChildFactory,$stateParams){
 
     var vm = this;
+    vm.createChild = createChild;
+    vm.newChild = {}
     activate();
 
     function activate(){
@@ -23,6 +25,10 @@
         .then(setChildren)
     }
 
+    function editChild(child){
+        return ChildFactory.editChild()
+    }
+
     function setChild(child){
       vm.child = child
       vm.age = child.age
@@ -33,6 +39,13 @@
 
     function setChildren(data){
       vm.children = data
+    }
+
+    function createChild(newChild){
+        return ChildFactory.createChild(newChild)
+          .then(function(response){
+            vm.children.push(response.data)
+          })
     }
 
   }

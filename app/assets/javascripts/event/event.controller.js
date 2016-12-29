@@ -1,12 +1,14 @@
 (function(){
    'use strict'
   function EventController(EventFactory, $stateParams, ActivityFactory, $state){
-   
+
     var vm = this
     vm.newEvent = {}
     vm.addEvent = addEvent
     vm.deleteEvent = deleteEvent
     vm.childExists = false
+    //var time = "2016-12-22T00:09:57.013Z"
+    var time = ("dddd, MMMM Do YYYY, h:mm:ss a")
 
     activate();
 
@@ -33,7 +35,7 @@
         return EventFactory.addEvent(event)
           .then(function(response){
             vm.events.push(response.data)
-          }) 
+          })
     }
 
     function deleteEvent(event){

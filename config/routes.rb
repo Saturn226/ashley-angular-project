@@ -8,7 +8,7 @@ Rails.application.routes.draw do
  #scope format: true,  defaults:{format: :json} do
   resources :events, only: [:index, :show, :create]
 
-  resources :children, only: [:index, :show, :destroy, :update, :destroy] do 
+  resources :children, only: [:index, :show, :destroy, :update, :create] do 
     resources :events, only: [:create, :update, :destroy, :show], defaults: { format: 'json' }
   end
   resources :klasses, only: [:create, :update, :destroy, :index, :show]

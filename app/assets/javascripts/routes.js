@@ -25,6 +25,12 @@
         controller: 'ChildController as vm'
       })
 
+      .state('home.newChild',{
+        url: 'children/new',
+        templateUrl: "children/new.html",
+        controller: 'ChildController as vm'
+      })
+
       .state('home.child',{
         url:'children/:id',
         templateUrl: "children/show.html",

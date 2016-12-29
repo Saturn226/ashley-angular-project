@@ -1,0 +1,35 @@
+
+
+
+<h3> Create a New Child </h3>
+
+<div>
+  <form ng-submit="vm.createChild(vm.newChild)" name="newChild">
+
+      <div class="form-group">
+        <input name="first_name" type="text" placeholder="first name" ng-model="vm.newChild.first_name" class="form-control" required>
+
+            <span ng-show="newChild.first_name.$dirty && newChild.first_name.$invalid">The First Name is required.</span>
+
+      </div>
+
+    <div class="form-group">
+      <input name="last_name" type="text" placeholder="last name" ng-model="vm.newChild.last_name" class="form-control" required >
+
+       <span ng-show="newChild.last_name.$dirty && newChild.last_name.$invalid">The Last Name is required.</span>
+    </div>
+
+    <div class="form-group">
+      <input name="age" type="text" placeholder="age" ng-model="vm.newChild.age" class="form-control" required>
+
+       <span ng-show="newChild.age.$dirty && newChild.age.$invalid">The Age is required.</span>
+    </div>
+
+    <div class="form-group">
+
+      <textarea name="notes" type="text" placeholder="notes" ng-model="vm.newChild.notes" class="form-control" rows="3"></textarea>
+    </div>
+
+    <input type="submit" class="btn" value="Create Child" class="form-control">
+  </form>
+</div>

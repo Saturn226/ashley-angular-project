@@ -4,8 +4,10 @@
 
     return{
       getChildren :getChildren,
-      getChild :getChild
-     
+      getChild :getChild,
+      createChild :createChild
+      editChild :editChild
+
     }
 
     function getChildren(){
@@ -20,6 +22,14 @@
           .catch(handleError)
     }
 
+    function editChild(child){
+
+    }
+
+    function createChild(newChild){
+      return $http.post('/children', {child: newChild})
+        .catch(handleError)
+    }
 
     function handleResponse(response){
       return response.data
@@ -29,7 +39,7 @@
       console.log(error)
     }
   }
-  
+
   angular
   .module('app')
   .factory('ChildFactory', ChildFactory)

@@ -17,28 +17,30 @@
 </form>
 </div>
 
+
+<!--- Search Bar -->
 <div class="input-group input-group-md">
-          <span class="input-group-addon" id="sizing-addon1"><strong>Search</strong></span>
-          <input ng-model="query" ng-change="searchFilter" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="">
+  <span class="input-group-addon" id="sizing-addon1"><strong>Search</strong></span>
+   <input ng-model="query" ng-change="searchFilter" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="">
 </div>
 
 
-
-<!-- <div ng-repeat="event in vm.events | orderBy: '-id' | filter: ActivityNameFilter"> -->
 
 <!-- filter -->
  <span>Filter: <select name="activity" ng-model="activity_id" ng-options="activity.id as activity.name for activity in vm.activities"> 
   <option value="">All</option>
  </select></span>
 
-<div ng-repeat="event in vm.events | ActivityNameFilter: activity_id | filter: query">
+ <!-- Events display -->
+
+<div ng-repeat="event in vm.events | ActivityNameFilter: activity_id | filter: query | orderBy: '-id'" >
 <pane class="list-group-item">
 
 
   <span class="close" ng-click="vm.deleteEvent(event)" ng-if="vm.childExists">×</span>
   <p>Child: {{event.child.name}}</p>
   <p>Activity: {{event.activity.name}}</p>
-  <p>Time: {{event.event_time}}</p>
+  <p>Time: {{event.created_at}}</p>
   <p>Mood: {{event.mood}}</p>
   <p ng-if="event.comment">Comments: {{event.comment}}</p>
 </pane>
