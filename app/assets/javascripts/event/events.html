@@ -2,12 +2,12 @@
 
 <!-- New Activity Form -->
 <form name="newEvent" ng-submit="vm.addEvent(vm.newEvent)" ng-if="vm.childExists">
-   <input name="comment" type="text" placeholder="comment" ng-model="vm.newEvent.comment" required>
+   <input name="comment" type="text" placeholder="comment" ng-model="vm.newEvent.comment">
 
     <select name="activity" ng-model="vm.newEvent.activity_id" ng-options="activity.id as activity.name for activity in vm.activities" required>
     </select>
 
-    
+
  <!--    <span ng-show="newEvent.comment.$dirty && newEvent.comment.$invalid">The Comment is required.</span>
 </p>
  -->
@@ -27,7 +27,7 @@
 
 
 <!-- filter -->
- <span>Filter: <select name="activity" ng-model="activity_id" ng-options="activity.id as activity.name for activity in vm.activities"> 
+ <span>Filter: <select name="activity" ng-model="activity_id" ng-options="activity.id as activity.name for activity in vm.activities">
   <option value="">All</option>
  </select></span>
 
@@ -41,10 +41,8 @@
   <p>Child: {{event.child.name}}</p>
   <p>Activity: {{event.activity.name}}</p>
   <p>Time: {{event.created_at}}</p>
-  <p>Mood: {{event.mood}}</p>
+  <!--<p>Mood: {{event.mood}}</p>-->
   <p ng-if="event.comment">Comments: {{event.comment}}</p>
 </pane>
- 
+
 </div>
-
-

@@ -1,5 +1,15 @@
-  <h3>{{vm.name}}</h3>
-    <h4>Age:{{vm.age}}</h4>Edit Profile <br>
+  <h3 ng-hide="vm.isEnabled()">{{vm.name}}  <span ng-click="vm.enableEditor()" class="glyphicon glyphicon-pencil"></span></h3>
+
+  <div ng-show="vm.isEnabled()">
+    <form ng-submit="vm.save()">
+      <input ng-model="vm.child.first_name" required>
+      <input ng-model="vm.child.last_name" required>
+      <input type="submit">
+    </form>
+    <button ng-click="vm.disableEditor()">cancel</button>
+
+  </div>
+    <h4>Age:{{vm.age}}</h4>
     <span ng-if="vm.child.notes"><h4>Notes:</h4>{{vm.child.notes}}</span><br>
 
 
@@ -7,6 +17,8 @@
 
   <!-- Edit -->
 
+
+<!--  Show Activity Log -->
   <span ui-sref="home.child.events({id: vm.child.id})">
     <button class="btn">Activity Log</button>
   </span>

@@ -5,7 +5,7 @@
     return{
       getChildren :getChildren,
       getChild :getChild,
-      createChild :createChild
+      createChild :createChild,
       editChild :editChild
 
     }
@@ -23,7 +23,9 @@
     }
 
     function editChild(child){
-
+      return $http.patch('/children/' + child.id, {child: child})
+        .then(handleResponse)
+        .catch(handleError)
     }
 
     function createChild(newChild){
