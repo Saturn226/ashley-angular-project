@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   get 'children/:id/events' => 'children#events'
 
   devise_for :users
-
+ scope '/api' do
   resources :events, only: [:create, :update, :destroy, :index, :show]
   resources :children, only: [:create, :update, :destroy, :index, :show]
   resources :klasses, only: [:create, :update, :destroy, :index, :show]
   resources :users, only: [:show, :edit]
+end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
